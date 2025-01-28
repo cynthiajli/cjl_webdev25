@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Form Elements</h1>
+    <!-- Form using basic input types -->
+    <!-- For more on form elements pee the w3 school tutorials-->
+
+    <p>
+      The form action attribute usually contains a link to a file or location to process the form data.
+    </p>
+
+    <!-- choose kebab-case, snake_case, or CamelCase and stick with it, dont alternate -->
+    <form 
+      action="js/create-profile.js"
+      method="GET"
+      target="_self"
+      name="user-create"
+       ></form>
+
+       <p>The name attribute for the form element =  how a script can differentiate this form from others. or it tells us what table in the database to write to.</p>
+
+       <form name="user_create" method="get">
+        <fieldset>
+          <legend>Simple Text Inputs</legend>
+          <p>This is your most basic text input. We change input types with the type attribute
+          </p>
+          <label for="first_name">First Name</label>
+          <input name="first_name" type="text" />
+
+          <label for="last_name">Last Name</label>
+          <input 
+            name="last_name" 
+            type="text" 
+            maxlength="10" 
+            placeholder="Doe"
+            required/> 
+            
+        </fieldset>
+        <input type="button" value="Submit" disabled/>
+        <button title="This is a better submit button" name="user_submit">
+          Submit Form
+        </button>
+
+        <!-- New Fieldset -->
+         <fieldset>
+            <legend> Common Input types</legend>
+            <label>Age</label>  
+            <input 
+                name="age" 
+                type="number" 
+                step="1" 
+                max="100" 
+                min="10"/>
+                <!-- PASSWORD -->
+              <label for="password">Password</label>
+                <input type="password" name="password" />
+            <label for="color">Favorite Color</label>
+                <input type="color" />
+         </fieldset>
+        
+         <!-- CHECKBOXES -->
+         <fieldset>
+          <legend>Checkboxes</legend>
+            <p> Checkboxes allow the user to select more than one option/value for the same field.
+              <em>each checkbox in the same group has the same name but different values </em>
+            </p>
+            <p> What pets do you have?</p>
+              <input name="pet" type="checkbox" value="dog" /> <label>Dog</label>
+              <input name="pet" type="checkbox" value="cat" /> <label>Cat</label>
+              <input name="pet" type="checkbox" value="bird" /> <label>Bird</label>
+         </fieldset>
+        
+         <!-- RADIO GROUPS -->
+        <fieldset>
+          <legend>Radio Group</legend>
+          <p> Radio buttons allow the user to select only ONE option for the same fielc/group
+            <em>each Radio in the same group has the same name but different values </em>
+          </p>
+          <p> What pets do you have?</p>
+          <input name="favorite" type="radio" value="dog" /> <label>Dog</label>
+          <input name="favorite" type="radio" value="cat" /> <label>Cat</label>
+          <input name="favorite" type="radio" value="bird" /> <label>Bird</label>
+        </fieldset>
+        
+        <!-- TEXT AREA -->
+        <fieldset>
+          <legend>Text Area</legend>
+          <p>Text areas are for sentence, paragraohs, or long responses.</p>
+          <label>What is your question?</label>
+          <textarea cols="50" rows="5"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Select Option Dropdowns</legend>
+          <label for="state">Pick a State</label>
+            <select name="state">
+              <optgroup label="East Coast">
+                <option value="NY">New York</option>
+                <option value="NJ">New Jersey</option>
+                <option value="MA">Massachusetts</option>
+            </optgroup>
+             <optgroup label="West Coast">
+              <option value="CA">California</option>
+              <option value="NV">Nevada</option>
+            </optgroup>
+              
+            </select>
+        </fieldset>
+
+       </form>
+  </body>
+</html>
