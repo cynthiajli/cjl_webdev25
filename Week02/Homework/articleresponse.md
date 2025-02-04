@@ -1,0 +1,1 @@
+It was interesting how you not only need to consider the user's experience of your product but also the people reviewing your work! I guess they are the first users, but I've never considered minding what your mock ups and samples look like before the final product... I always have messier drafts whn it comes to design because I usually think it's just for me to see
