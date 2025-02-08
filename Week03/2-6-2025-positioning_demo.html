@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.
+     without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+    <!-- the viewport tag sets the initial scale and ensures
+     proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The title tag shows up in the browser tab and as the big blue link in search results -->
+    <title>Positioning</title>
+ 
+    <style type="text/css">
+      .abs_br {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+      }
+
+      .rel_tl {
+        width: 200px;
+        height: 200px;
+        background-color: cornflowerblue;
+        position: relative;
+        top: 50%;
+        right: 50%;
+      }
+
+      .abs_child{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        top: 45px;
+        left: 50px;
+      }
+
+      .rel_parent{
+        width: 500px;
+        height: 500px;
+        background-color: darkblue;
+        position: relative;
+        bottom: 50px;
+        left: 80px;
+        z-index: 1000;
+        /* THE Z INDEX IS HOW FRONT AN ELEMENT IS  */
+      }
+
+      .abs_parent{
+        width: 500px;
+        height: 500px;
+        background-color: chartreuse;
+        position: absolute;
+        top: 90px;
+        left: 200px;
+      }
+
+      .fixed_top {
+        height: 100px;
+        width: 100%;
+        background-color: yellow;
+        position: fixed;
+        top: 0;
+      }
+
+      /* MODAL OVERLAY, aka the transparent layer over a screen */
+      .cover {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(000, 100, 100, 20%);
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- Abosulte positioned elements without a positioned parent will position themselves based on the browser window-->
+    <div class="abs_br"></div>
+
+    <!-- relative positioned elements without a positioned parent will position themselves relative to where they were supposed to be  -->
+    <div class="rel_tl"></div>
+
+    <div class="rel_parent">
+      <div class="abs_child"></div>
+    </div>
+
+    <div class="abs_parent">
+      <div class="abs_child"></div>
+    </div>
+
+    <div class="fixed_top"></div>
+
+    <div class="cover"></div>
+
+  </body>
+</html>

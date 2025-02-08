@@ -1,0 +1,55 @@
+/* font-family: "Meow Script", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+    /* This is how we get a full sized fixed centered  background image */
+    background: url('../../webdev_sp25/Week03/Week3_2/Gallery/Gallery_Starter_Files/img/bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+body {
+/* apply the default font family, all descenedent elements will inherit this fammily but you can alaays override*/
+    font-family: "Meow Script", serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* GALLERY */
+.container {
+    width: 900px;
+    margin: 100px auto;
+    /* when we use inline block to stack elements
+    we should zero out the font size on the
+    container elements */
+    font-size: 0;
+}
+
+.polaroid {
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    /* whenever you want to absolutely position someone inside another element, you should make sure the parent element is positioned relative */
+    
+}
+
+.polaroid img {
+    border: 10px solid #ccc;
+    border-bottom-width:45px ;
+}
+
+.polaroid p {
+    font-size: 400;
+
+
+}

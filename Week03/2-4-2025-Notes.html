@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar</title>
+
+    <style type="text/CSS">
+      /* This is the universal selector for generel defaults that you can overrride later on */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* tag/element type selector applies to ever instance of that tag unles overwritten */
+      body {
+        background-color: seagreen;
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        /* we can call out box properties each side at a time */
+        margin-top: 24px;
+        /*OR give 2 value for the top/bottom and left/right */
+        margin: 2rem 1rem;
+        /* if you put in 4 values, it goes top, right, bottom, left */
+      }
+
+      p{
+        font-size: 19px;
+        margin: 1.5rem; 
+        line-height: 30px;
+      }
+
+      /* class selectors star with . in our css and need to be applied with the class tribute in HTML */
+      .crazyText {
+        color: chartreuse;
+        font-weight: 12;
+        text-transform: capitalize;
+        /* x offset y offset blur color */
+        text-shadow: 5px 5px 10px plum;
+        text-decoration: dotted;
+        font-family: fantasy;
+        border: 5px red;
+      }
+
+      /* ID selectors are for one unique element per HTML file. They use # */
+      #callToAction {
+        font-style: italic;
+        margin: 4rem;
+        border: 2px double red;
+        padding: 19px;
+        /* everythign from the border in is the BOX. The margin is outside the box, you need to keep that in mind*/
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 id="callToAction">I am really good at coming up with text</h1>
+
+    <p>I'm so good that I don't need to use the same words that are being typed on the screen right now. I can write amazinf filler text all from my mind.
+    </p>
+
+    <p>This is another paragraph of really amazing text. I've never seen a Nick Cage movie. I don't even know what he looks like. I do know a Nick Cave.
+    </p>
+
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+    by injected humour, or randomised words which don't look even slightly believable. <span class="crazyText">If you are going to use a passage of
+    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+    generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the
+    Internet.</span> It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
+    generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
+    injected humour, or non-characteristic words etc.</p>
+
+  </body>
+</html>

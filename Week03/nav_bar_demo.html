@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar</title>
+
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* this is an descendent selector, looks for ul within nav */
+      /* there is no space between the nav and #main-menu, this is a nav tag with the id main menu */
+      nav#main-menu ul {
+        /* remove bullet points */
+        list-style-type: none;
+        /* if there is any text or image that overflows it gets cut off */
+        overflow:hidden;
+        background-color: darkseagreen;
+        /* when we are about to use inline-block, we make the parent's element font size 0 REMEMBER TO ZERO OUT THE FONT SIZE*/
+        font-size: 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+        /* remember to bring back the font size in the subclass */
+        font-size: 1rem;
+      
+      }
+
+      nav a {
+        display: block;
+        width: 100px;
+        text-align: center;
+        padding: 20px;
+        /* remove default a styling */
+        text-decoration: none;
+        color: aliceblue;
+      }
+
+      /* this is a PSEUDO CLASS SELECTOR for a temporary tag of a tag (using :) */
+      nav a:hover {
+        background-color: cornsilk;
+        color:darkgreen
+      }
+
+      nav a:active {
+        background-color: red;
+      }
+    </style>
+
+<!-- HTML -->
+  </head>
+  <body>
+    <header>
+      <nav id="main-menu">
+        <ul>
+          <li><a href="#" class="active">Link 1</a> </li>
+          <li><a href="#">Link 2</a> </li>
+          <li><a href="#">Link 3</a> </li>
+          <li><a href="#">Link 4</a> </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
