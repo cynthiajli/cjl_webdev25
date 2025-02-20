@@ -1,0 +1,226 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* we alawys fill the image container with the image, then size the box around it */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Flexbox Simple Row Layouts */
+
+/* Base Styles */
+/* remember to always say row and wrap for desktop!! flex is column for mobile */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* some styles so we can see our containers */
+    border: 1px solid red;
+    background-color: rgba(255,0,255,30%);
+    min-height: 400px;
+}
+
+.item {
+    border: 1px solid cornflowerblue;
+    background-color: rgba(0,0,255,30%);
+    width: 23%;
+    height: 300px;
+    
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Atomic Styles */
+/* justify is the right to left, align is the top to botttom */
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-even {
+    justify-content: space-evenly;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: end;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-stretch {
+    align-self: stretch;
+    /* we need to ditch the assigned pixel height for this to stretch */
+    height: auto;
+}
+
+/* Media Queries are for applying different styles on different size screens */
+/* Do desktop first, then go from big to small, if mobile first then do small to big */
+
+
+/* simple classic layout using flexbox */
+
+/* use display flex to put the h2 and its margins in the div */
+
+/* ALWAYS HAVE MEDIA QUERIES AT THE END!!! OF THE DOC */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: chartreuse;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    .self-stretch {
+        height: 300px;
+        width: auto;
+    }
+}
+
+
+/* NEW PART OF SITE, IGNORE ABOVE */
+header {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    background-color: aqua;
+}
+
+/* this is to stack things side by side, the div is just to align better */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    background-color: darkcyan;
+}
+
+.grid-item {
+    width: 23%;
+    margin: 1%;
+    /* 23 +1 +1 is 25% so there are 4 cats */
+}
+
+.secondary-nav {
+    min-width: 25%;
+    background-color: crimson;
+}
+
+.menu {
+    /* getting rid of lsit default*/
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu li {
+    border-bottom: 1px solid gray;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    width: 100%;
+    height: 50px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: coral;
+    display: flex;
+    min-height: 100px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .grid-item {
+        width: 48%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .wrapper {flex-direction: column;
+    }
+
+    /* order only works in FLEX BOX */
+    /* AND you must write the order for all the contents */
+    .secondary-nav {
+        order: 1;
+    }
+
+    .grid-container {
+        order:2 ;
+        flex-direction: column;
+        width: 98%;
+    }
+
+    .
+}

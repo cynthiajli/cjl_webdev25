@@ -1,0 +1,198 @@
+/* font-family: "Meow Script", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+    /* This is how we get a full sized fixed centered  background image */
+    background: url('../../webdev_sp25/Week03/Week3_2/Gallery/Gallery_Starter_Files/img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    /* apply the default font family, all descenedent elements will inherit this fammily but you can alaays override*/
+    font-family: "Meow Script", serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* NAVIGATION */
+header {
+    width: 100%;
+    height: 50px;
+    padding: 0 10%;
+    background-color: gray;
+    overflow-y:hidden;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    /* flex container properties */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(img/wheat.webp);
+}
+
+header h1 {
+    color: 333;
+}
+
+nav ul {
+    display:flex;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(40, 40, 40, 0.5);
+}
+
+nav li {
+    font-size: 18px;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color:#333;
+    transition: all 1s linear;
+}
+
+nav a:hover {
+    background-color: rgba(40,40,40,0.5);
+    color: antiquewhite;
+}
+
+nav a.active {
+    background-color: black;
+    color: antiquewhite;
+}
+
+/* GALLERY */
+.container {
+    width: 900px;
+    margin: 100px auto;
+    /* when we use inline block to stack elements
+    we should zero out the font size on the
+    container elements */
+    font-size: 0;
+}
+
+.polaroid {
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    /* whenever you want to absolutely position someone inside another element, you should make sure the parent element is positioned relative */
+
+}
+
+.polaroid img {
+    border: 10px solid #ccc;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    font-size: 400;
+    position: absolute;
+    bottom: 10px;
+    width: 260px;
+    text-align: center;
+    color: #333;
+}
+
+.scale_up{
+    transform: scale(1.2);
+    /* z-index: 10; */
+}
+
+.scale_x {
+    transform: scale(2,1);
+}
+
+.scale_y {
+    transform: scaleY(2);
+}
+
+.skew_x {
+    transform: skewX(30deg);
+    transform-origin: top;
+}
+
+.skew_y {
+    transform: skewY(-20deg);
+}
+
+.skew_both {
+    transform: skew(10deg, 40deg);
+}
+
+.rot_x {
+    transform: rotateX(180deg);
+}
+
+.rot_y {
+    transform: rotateY(180deg);
+}
+
+.rot_z {
+    transform: rotateZ(180deg);
+}
+
+.rotateLeft {
+    transform: rotate(-20deg);
+    transform-origin: bottom right;
+    transition: all 5s ease-out;
+    /* the transition is applied to the base state */
+}
+
+.rotateLeft:hover {
+    transform: rotate(20deg);
+}
+
+.skewHover {
+    transform: skewX(30deg);
+    transition: all 5s ease-in;
+}
+
+.skewHover:hover {
+    transform: skewY(-40deg);
+}
+
+.scaleHover {
+    transform: scale(0.5,0.5);
+    transition: all 2s ease-in-out;
+}
+
+.scaleHover:hover {
+    transform: scale(2,2);
+}
+
+/* Filters */
+.colorSwap {
+    filter: grayscale(0%);
+    transition: all 2s ease-in;
+}
+
+.colorSwap:hover {
+    filter:grayscale(100%) ;
+}
+
+.blur {
+    filter: blur(80%);
+    transition: all 1s ease;
+}
+
+.blur:hover {
+    filter: blur(20%);
+}
