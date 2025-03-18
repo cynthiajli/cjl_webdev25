@@ -1,0 +1,146 @@
+/* GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+img {
+    /* you never size the image, you size the box it's in and then set width to 100 */
+    width: 100%;
+    height: auto;
+}
+
+/* DESKTOP FIRST DESIGN PATTERN */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('img/242.jpg');
+    padding: 0 2rem;
+    /* if it was margin, the pattern wouldnt go all the way to the edge */
+    position: relative;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    min-width: 5rem
+}
+
+.menu li a {
+    display: block;
+    padding: 1rem;
+}
+
+.menu li a:hover {
+    color: blue;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.thumb {
+    width: 23%;
+    margin: 1rem auto;
+}
+
+/* Media Queries */
+/* NOTE: if you style desktop first, 
+you want to get progressively smaller with each media query */
+
+/* TABLET */
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+    body {
+        background-color: greenyellow;
+    }
+
+    .thumb {
+        width: 45%;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: orangered;
+    }
+
+    Header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0;
+
+    }
+
+    .brand {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        color: #aaa;
+        font-size: 2.5rem;
+        cursor: pointer;
+        /* to let you know that is clickable */
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .thumb {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+}
