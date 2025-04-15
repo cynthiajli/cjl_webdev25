@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tip Calculator</title>
+    <style type="text/css">
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        /* a little trick from before flexbox items existed */
+        line-height: 40px;
+        margin-top: 5%;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .well {
+        border-radius: 10px;
+        background-color: #ddd;
+        min-height: 100px;
+        padding: 20px;
+      }
+
+      .container button {
+
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px 0;}
+
+      
+
+    </style>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function {
+        // add event listender to our function 
+        // we dnt need to store it as a variable, we can just add the even listener and move on 
+        document.getElementById('calcBtn') .addEventListener
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tip Calculator</h1>
+      <form>
+        <label for="bill">Enter total value of bill</label>
+        <input type="number" name="bill" id="bill" min="0" step="0.01" />
+        <br />
+        <!-- radio button group- all radio buttons in the same group/choice
+         share the same name but each has a different value -->
+         <label><input type="radio" name="tip" value="0.05"/>5%</label>
+         <label><input type="radio" name="tip" value="0.1"/>10%</label>
+         <label><input type="radio" name="tip" value="0.15"/>15%</label>
+         <label><input type="radio" name="tip" value="0.2"/>20%</label>
+
+         <br />
+         <button type="submit" id="calcBtn">Calculate Tip</button>
+      </form>
+
+      <div>
+
+      </div>
+    </div>
+  </body>
+</html>

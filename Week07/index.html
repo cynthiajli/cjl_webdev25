@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Responsive Layout W/ Nav Toggle</title>
     <link rel="stylesheet" typle="text/css" href="style.css" />
+    <script type="text/javascript">
+        // wait for the entire DOM content to load
+        // add event listener for CLICK events in our hamburger menu
+        // write a function to toggle the .show class on our nav tag
+        document.addEventListener('DOMContentLoaded', function () {
+            //this sis where ic an store HTML elements ass variable
+            // this is where i can add other event listeners
+            const hamburger = document.getElementById('hamburger')
+            hamburger.addEventListener('click', toggleMenu)
+        })
+
+        function toggleMenu () {
+            const navbar = document.getElementById('main-nav')
+            navbar.classList.toggle('show')
+            //toggle only works for classlist
+            
+        }
+
+    </script>
 </head>
 
 <body>
@@ -16,7 +35,7 @@
 
          <!-- This hamburger menu icon will hide on desktop, show on mobile, 
           be absolutely psotiioned, clickable vias JS to hide/show nav menu -->
-        <span class="mobile-menu">&#8801;</span>
+        <span class="mobile-menu" id="hamburger">&#8801;</span>
         <nav id="main-nav">
             <ul class="menu">
                 <li><a href="#">Link 1</a></li>

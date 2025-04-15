@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokemon Random Generator</title>
+
+    <script type="text/javascript">
+        // random number generator
+        function randNumRange(min, max) {
+            var rn = Math.round(Math.random() * (max - min) + min)
+            return rn
+        }
+
+        const fetchCharacterJSON = async () => {
+            const randomIndex = randNumRange(1, 1025)
+            const apiURL = `https://pokeapi.co/api/v2/pokemon/${randomIndex}`;
+            const response = await fetch(apiURL)
+            const data = await response.json()
+            return data
+        }
+
+
+        fetchCharacterJSON()
+            .then((data) => {
+                const parentElement = document.getElementById('card')
+                const pokePic = `<img src=${data.sprites.front_default} />`
+                parentElement.insertAdjacentHTML('afterbegin', pokePic)
+
+                const pokeName = `<h1>${data.name}</h1>`
+                parentElement.insertAdjacentHTML('afterbegin', pokeName)
+
+                // background color changer based on type
+                const pokeType = `${data.types[0].type.name}`
+                // you need [0] because some pokemon have more than one type
+                if (pokeType == 'rock') {
+                    parentElement.style.backgroundColor = "#913503";
+                    parentElement.style.color = "#f0ead6";
+                } 
+                else if (pokeType == 'grass') {
+                    parentElement.style.backgroundColor = "#66bd4b";
+                }
+                else if (pokeType == 'fire') {
+                    parentElement.style.backgroundColor = "#fa4932";
+                }
+                else if (pokeType == 'electric') {
+                    parentElement.style.backgroundColor = "yellow";
+                }
+                else if (pokeType == 'water') {
+                    parentElement.style.backgroundColor = "#348aed";
+                }
+                else if (pokeType == 'normal') {
+                    parentElement.style.backgroundColor = "#cfcfcf";
+                }
+                else if (pokeType == 'ice') {
+                    parentElement.style.backgroundColor = "lightblue";
+                }
+                else if (pokeType == 'psychic') {
+                    parentElement.style.backgroundColor = "#9b35ab";
+                } 
+                else if (pokeType == 'fighting') {
+                    parentElement.style.backgroundColor = "#9c5c03";
+                    parentElement.style.color = "#f0ead6";
+                }
+                else if (pokeType == 'bug') {
+                    parentElement.style.backgroundColor = "#a6ed55";
+                }
+                else if (pokeType == 'dark') {
+                    parentElement.style.backgroundColor = "#252529";
+                    parentElement.style.color = "#f0ead6";                    
+                }
+                else if (pokeType == 'poison') {
+                    parentElement.style.backgroundColor = "#1e054f";
+                    parentElement.style.color = "#f0ead6";
+                }
+                else if (pokeType == 'steel') {
+                    parentElement.style.backgroundColor = "#919187";
+                }
+                else if (pokeType == 'ground') {
+                    parentElement.style.backgroundColor = "#704214";
+                    parentElement.style.color = "#f0ead6";
+                }
+                else if (pokeType == 'ghost') {
+                    parentElement.style.backgroundColor = "#5628a1";
+                    parentElement.style.color = "#f0ead6";
+                }
+                else if (pokeType == 'fairy') {
+                    parentElement.style.backgroundColor = "#fc86c1";
+                }
+                else if (pokeType == 'flying') {
+                    parentElement.style.backgroundColor = "#d8b5ff";
+                }
+                else if (pokeType == 'dragon') {
+                    parentElement.style.backgroundColor = "aqua";
+                }
+                
+                parentElement.insertAdjacentHTML('beforeend', pokeType)
+                const pokeNumber = `<p>${data.id}</p>`
+                parentElement.insertAdjacentHTML('beforeend', pokeNumber)
+
+
+
+            })
+            .catch((error) => {
+                console.error('ERROR', error)
+            })
+
+       
+
+        document.addEventListener('DOMContentLoaded', () => {
+                let pokeBtn = document.getElementById('changeButton');
+                pokeBtn.addEventListener('click', () => {
+                    location.reload();
+                });
+            });
+
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: darkblue;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        #card {
+            width: 25rem;
+            margin: 0 auto;
+            margin-top: 5rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-width: 1rem;
+            border-style: solid;
+            border-color: #ebde34;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            font-family: "Roboto Condensed", sans-serif;
+            text-transform: capitalize;
+        }
+
+        h1 {
+            margin-top: 0rem;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        #pokeType {
+            font-size: 1rem;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        button {
+            background-color: #ebde34;
+            color: darkblue;
+            width: 15rem;
+            height: 3rem;
+            font-size: 2rem;
+            font-family: "Roboto Condensed", sans-serif;
+            border-radius: 0.5rem;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="card">
+        <!-- after begin image inserts here -->
+        <p id="pokeType"></p>
+    </div>
+
+    <div class="container">
+        <button id="changeButton">CHANGE CARD!</button>
+    </div>
+</body>
+
+</html>
