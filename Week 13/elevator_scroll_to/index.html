@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elevator Scrolling GSAP</title>
+    <style type="text/css" media="screen">
+        body {
+            font-family: Helvetica, Arial,  sans-serif;
+            margin: 40px 0;
+            padding-top: 100px;
+            background-color: black;
+            color: white;
+        }
+
+        #main {
+            margin: 0 auto;
+            width: 800px;
+
+        }
+
+        section {
+            padding: 20px 0 80px 0;
+            height: 1000px;
+        }
+
+        section h2 {
+            font-size: 48px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        ul {
+            position: fixed;
+            top: 40%;
+            right: 0;
+            list-style-type: none;
+        }
+
+        li {
+            width: 30px;
+            padding: 10px;
+            margin-bottom: 1px;
+            color: #ccc;
+            border-left: 10px solid #333;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        :active {
+            color: #fff;
+            border-left: 20px solid #fff;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- elevator buttons -->
+    <ul>
+        <li id="floor5Btn">5</li>
+        <li id="floor4Btn">4</li>
+        <li id="floor3Btn">3</li>
+        <li id="floor2Btn">2</li>
+        <li id="floor1Btn">1</li>
+    </ul>
+
+    <!-- floors -->
+    <div id="main">
+        <section id="floor5Panel">
+            <h2>Floor 5</h2>
+        </section>
+
+        <section id="floor4Panel">
+            <h2>Floor 4</h2>
+        </section>
+
+        <section id="floor3Panel">
+            <h2>Floor 3</h2>
+        </section>
+
+        <section id="floor2Panel">
+            <h2>Floor 2</h2>
+        </section>
+
+        <section id="floor1Panel">
+            <h2>Floor 1</h2>
+        </section>
+    </div>
+
+<!-- load greensock before plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript">
+      // wait for the DOM to load, then asssign our even listeners and elements to vars 
+        document.addEventListener('DOMContentLoaded', () =>{
+            // make everything fade in on load 
+            gsap.from('body', 1, {opacity: 0, duration: 1})
+            // make our elevator buttons soom in from the right
+            gsap.from('ul', {right: -500, duration: 1, delay: 0.5})
+
+            // grab each elevator button by ID and store them as separate variables 
+            const floor1Btn = document.getElementById('floor1Btn')
+            const floor2Btn = document.getElementById('floor2Btn')
+            const floor3Btn = document.getElementById('floor3Btn')
+            const floor4Btn = document.getElementById('floor4Btn')
+            const floor5Btn = document.getElementById('floor5Btn')
+
+            let navButtons = document.getElementByTagName('LI')
+            // why does this look insane and redundant? it's an HTML collection not an array, but we want an array
+
+            console.log(navButtons)
+            // so we can acceess JS built in array methods
+            // we  want to cast the collection into a new empty array
+            navButtons = [].slice.call(navButtons)
+            console.log(navButtons)
+
+            // add the active class to each button on mouse enter
+            navButtons.forEach((button) => {
+                button.addEventListener('mouseenter', function () {
+                    gsap.to(this, {className: 'active', duration: 1})
+                })
+            })
+            // remove active class on mouse leave
+            navButtons.forEach((button) => {
+                button.addEventListener('mouseleave', function () {
+                    gsap.to(this, { className: '', duration: 1 })
+                })
+            })
+
+            // set the scroll position to the top of each section 
+            console.log(document.querySelector('#floor1Panel').getBoundingClientRect().top
+        )
+
+            // assign an HTML5 data-attribue to each of our BUTTONS based on the offsets of each floor
+            floor1Btn.setAttribute('data-')
+        })
+
+        // assign a function on click to eac of our nav buttons
+    </script>
+</body>
+
+</html>
