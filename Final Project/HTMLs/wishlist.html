@@ -35,6 +35,7 @@
 </html>
 
 <script>
+    // GRABS WISHLIST FROM LOCAL STORAGE
     document.addEventListener('DOMContentLoaded', () => {
         const list = document.getElementById("wishlistItems");
         let wishlist = localStorage.getItem("wishlist");
@@ -45,6 +46,7 @@
             wishlist = [];
         }
 
+        // IF THERE IS NO ENTRIES, DISPLAY EMPTY
         if (wishlist.length === 0) {
             const li = document.createElement("li");
             li.textContent = "your wishlist is empty.";
@@ -54,20 +56,25 @@
                 const li = document.createElement("li");
                 li.textContent = item.title;
 
+                // CREATE REMOVE BUTTON
                 const removeBtn = document.createElement("button");
                 removeBtn.textContent = "Remove";
 
+                // IF BUTTON IS CLICKED, REMOVE ITEM AND RELOAD
                 removeBtn.addEventListener("click", () => {
-                    wishlist.splice(index, 1); // Remove from array
-                    localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Save updated list
-                    window.location.reload(); // Refresh display
+                    wishlist.splice(index, 1);
+                    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+                    window.location.reload(); 
                 });
 
+
+                // ADD BUTTON AND ITEM TO LIST
                 li.appendChild(removeBtn);
                 list.appendChild(li);
             });
         }
 
+        // CLEAR LIST BUTTON
         document.getElementById("clearWishlist").addEventListener("click", () => {
             localStorage.removeItem("wishlist");
             window.location.reload();
