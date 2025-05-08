@@ -8,3 +8,5 @@ Firstly, I added a draggable function for the items on the home page, making it 
 I also added a wishlist function, where a user can click on a button for items in my collection they want to add to a wishlist, and when you click the "See my Wishlist" button, displays a list of recorded items on another page.
 
 The contact form is a functioning form. 
+
+Documentation: https://docs.google.com/presentation/d/1ATX1uqnYlYqSfHYAhpdnIjYpoUH_C-DkFj6pvZe8Pfg/edit?usp=sharing
